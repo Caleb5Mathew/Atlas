@@ -20,3 +20,11 @@
     ⁃Ex. fetch_image_urls("nature", 40, wd, 10)
 -persist_image_2-
     ⁃Takes folderpath (str), Image (str), and counter (int) as inputs and writes the url path in order to save the image
+    ⁃Ex. persist_image_2('C://Users//ezekm//Downloads', 'https://tinyurl.com/bdhxtkkd', 2)
+    *Note* persist_image_2 is not used in this project, it is only there in case of future changes in which the final image is saved, not the fetched images
+-persist_image-
+    ⁃Takes folderpath (str), Image (str), and counter (int) as inputs and writes the url path in order to save the image
+    ⁃Ex. persist_image_2('C://Users//ezekm//Downloads', 'https://tinyurl.com/bdhxtkkd', 2)    
+-search_and_download-
+    ⁃Takes query (string), driver location (str), download location (str), number of images to get (int)
+    ⁃Ex. search_and_download('parrot',''Downloads//chromedriver_win32//chromedriver.exe' , './images', 32)
