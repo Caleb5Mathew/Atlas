@@ -16,12 +16,14 @@
     ⁃Takes webdriver(wb) as input and scrolls to the bottom of the webpage
     ⁃Ex. scroll_to_end(wd)
 -fetch_image_urls-
-    ⁃Takes query (string), max links (int), wd, and time to rest between fetches (int), as input and gets the urls of the thumbnails from the results of the search
+    ⁃Takes query (string), max links (int), wd, and time to rest between fetches (int), as input and gets the 
+     urls of the thumbnails from the results of the search
     ⁃Ex. fetch_image_urls("nature", 40, wd, 10)
 -persist_image_2-
     ⁃Takes folderpath (str), Image (str), and counter (int) as inputs and writes the url path in order to save the image
     ⁃Ex. persist_image_2('C://Users//ezekm//Downloads', 'https://tinyurl.com/bdhxtkkd', 2)
-    *Note* persist_image_2 is not used in this project, it is only there in case of future changes in which the final image is saved, not the fetched images
+    *Note* persist_image_2 is not used in this project, it is only there in case of future changes in which the final 
+     image is saved, not the fetched images
 -persist_image-
     ⁃Takes folderpath (str), Image (str), and counter (int) as inputs and writes the url path in order to save the image
     ⁃Ex. persist_image_2('C://Users//ezekm//Downloads', 'https://tinyurl.com/bdhxtkkd', 2)    
@@ -32,7 +34,10 @@
 !Breakdown!
     ⁃Atlas uses Selenium Chromedriver in order to fetch images for the query word. 
     ⁃NLTK is used to fetch synonyms and look-alikes for the query word and these outputs are stored
-    ⁃images for the query word and it's synonyms is stored in images2 and if the synonym list length is below 6, the starting query word is searched for and downloaded. The amount of "query searches" that is looked for is based off of the synonym list length times 8 and that total number minus 50. 48 is the allowed pictures that is shown in the default settings, but 50 allows room for 2 broken url links or unaccessable photos.
+    ⁃images for the query word and it's synonyms is stored in images2 and if the synonym list length is below 6, the starting 
+     query word is searched for and downloaded. The amount of "query searches" that is looked for is based off of the 
+     synonym list length times 8 and that total number minus 50. 48 is the allowed pictures that is shown in the default 
+     settings, but 50 allows room for 2 broken url links or unaccessable photos.
 
 
 
