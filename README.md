@@ -25,7 +25,8 @@ The code begins by importing the necessary libraries:
    requests is used for sending HTTP requests to fetch the image URLs.
     
    BeautifulSoup is a library for web scraping and parsing HTML.
-   _
+_
+_
    
     
 https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L1-L5
