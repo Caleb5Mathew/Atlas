@@ -79,7 +79,7 @@ https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550
 
 Fetching and Displaying the Images:
     The fetch_and_display_images function is called, passing the query word and the maximum number of images as arguments.<br />
-    That's the complete breakdown of the code. It prompts the user for a query word, fetches images from Google Images based on the query, downloads them, <br />and then displays them in a Tkinter-based      image gallery.
+    That's the complete breakdown of the code. It prompts the user for a query word, fetches images from Google Images based on the query, downloads them, and then displays them in a Tkinter-based      image gallery.
 <br />
 <br />
 https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L74-L75
