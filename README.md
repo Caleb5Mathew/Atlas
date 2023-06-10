@@ -13,7 +13,6 @@ In Order To Run:
 
 </pre>
 ~Coding Breakdown
-```diff
 Importing the Required Libraries:
 The code begins by importing the necessary libraries:
 
