@@ -2,7 +2,7 @@
 ~A program used in order to derive images from Google Search in order to capture human perspective of inputted words 
 <br />
 <br />
--**Visit Atlas2 Branch for up to date (6/10/23) version of BS4 Webscraper implementation-
+**Visit Atlas2 Branch for up to date (6/10/23) version of BS4 Webscraper implementation
 <pre>
 In Order To Run:  
   ⁃Enter word to lookup  
