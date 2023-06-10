@@ -36,7 +36,7 @@ https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550
 <br />
 <br />
 Defining the display_images Function:
-    The display_images function is responsible for creating a Tkinter window and displaying the images in a gallery format. It takes the image_folder parameter, which represents the path to the       folder where the images are stored.
+    The display_images function is responsible for creating a Tkinter window and displaying the images in a gallery format.<br /> It takes the image_folder parameter, which represents the path to the       folder where the images are stored.
 <br />
 <br />
 https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L8-L36
@@ -48,12 +48,13 @@ Defining the fetch_and_display_images Function:
 
   Inside this function:
 
-   The search_url variable is set to the Google Images search URL with a placeholder for the query word.
-    The code sends an HTTP GET request to the search URL using requests.get(), retrieves the response, and creates a BeautifulSoup object to parse the HTML content.
-    It finds all the img tags within the HTML using soup.find_all('img') and extracts the source URLs for the images.
-    It creates a target folder named "images" using os.makedirs() if it doesn't already exist.
-    The function iterates over the retrieved image URLs and downloads the images using requests.get(url).content. Each image is saved in the "images" folder with a file name in the format             "image_i.jpg", where i represents the index of the image.
-    The downloaded images are then displayed by calling the display_images function, passing the path of the target folder.
+   The search_url variable is set to the Google Images search URL with a placeholder for the query word.<br />
+    The code sends an HTTP GET request to the search URL using requests.get(), retrieves the response, and creates a BeautifulSoup object to parse the HTML content.<br />
+    It finds all the img tags within the HTML using soup.find_all('img') and extracts the source URLs for the images.<br />
+    It creates a target folder named "images" using os.makedirs() if it doesn't already exist.<br />
+    The function iterates over the retrieved image URLs and downloads the images using requests.get(url).content. Each image is saved in the "images" folder with <br />
+    a file name in the format "image_i.jpg", where i represents the index of the image.<br />
+    The downloaded images are then displayed by calling the display_images function, passing the path of the target folder.<br />
 <br />
 <br />
 https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L39-L65
@@ -77,8 +78,8 @@ https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550
 <br />
 
 Fetching and Displaying the Images:
-    The fetch_and_display_images function is called, passing the query word and the maximum number of images as arguments.
-    That's the complete breakdown of the code. It prompts the user for a query word, fetches images from Google Images based on the query, downloads them, and then displays them in a Tkinter-based      image gallery.
+    The fetch_and_display_images function is called, passing the query word and the maximum number of images as arguments.<br />
+    That's the complete breakdown of the code. It prompts the user for a query word, fetches images from Google Images based on the query, downloads them, <br />and then displays them in a Tkinter-based      image gallery.
 <br />
 <br />
 https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L74-L75
