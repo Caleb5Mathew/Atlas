@@ -2,57 +2,65 @@
 ~A program used in order to derive images from Google Search in order to capture human perspective of inputted words
 <pre>
 In Order To Run:  
-  ⁃Enter word to lookup  
-  ⁃Type C or D for Compact and Disarrayed  
-     -Compact: an arrangement of equal square pieces in rows and columns  
-           -Refer to Compact_ex file  
-     -Disarrayed: a piece that has random image sizes and random image placements 
-      along the piece  
-           -Refer to Dissarrayed_ex file  
+  -pip install tkinter
+  -pip install pillow
+  -pip install requests
+  -pip install beautifulsoup4
+  
+  -python (file_name).py ~Atlas3.py if you don't touch anything~
+  
+  -Enter word to lookup
+
 </pre>
 ~Coding Breakdown
 ```diff
--Atlas Functions-
-  
--resize_items-
-    ⁃Takes image as input and returns a cropped version
-    ⁃Ex. resize_images(Image)
-    *Note*: Image is only cropped, not sized
--list_div-    
-    ⁃Takes list as input and returns the list divided in 2
-    ⁃Ex. list_div(listA)
-    *Note* In this project, list_div is iterated to split the list into sections as needed by rows
--scroll_to_end-
-    ⁃Takes webdriver(wb) as input and scrolls to the bottom of the webpage
-    ⁃Ex. scroll_to_end(wd)
--fetch_image_urls-
-    ⁃Takes query (string), max links (int), wd, and time to rest between fetches (int), as input and gets the 
-     urls of the thumbnails from the results of the search
-    ⁃Ex. fetch_image_urls("nature", 40, wd, 10)
--persist_image_2-
-    ⁃Takes folderpath (str), Image (str), and counter (int) as inputs and writes the url path in order to save the image
-    ⁃Ex. persist_image_2('C://Users//ezekm//Downloads', 'https://tinyurl.com/bdhxtkkd', 2)
-    *Note* persist_image_2 is not used in this project, it is only there in case of future changes in which the final 
-     image is saved, not the fetched images
--persist_image-
-    ⁃Takes folderpath (str), Image (str), and counter (int) as inputs and writes the url path in order to save the image
-    ⁃Ex. persist_image_2('C://Users//ezekm//Downloads', 'https://tinyurl.com/bdhxtkkd', 2)    
--search_and_download-
-    ⁃Takes query (string), driver location (str), download location (str), number of images to get (int)
-    ⁃Ex. search_and_download('parrot',''Downloads//chromedriver_win32//chromedriver.exe' , './images', 32)
+Importing the Required Libraries:
+The code begins by importing the necessary libraries:
+
+    tkinter is used for creating the GUI and displaying the images.
+    PIL (Python Imaging Library) is used for image processing and displaying images in Tkinter.
+    os provides functionality for interacting with the operating system, such as creating directories and file paths.
+    requests is used for sending HTTP requests to fetch the image URLs.
+    BeautifulSoup is a library for web scraping and parsing HTML.
+    
+https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L1C1-L5
 
 
-!Atlas Scheme!
-    ⁃Atlas uses Selenium Chromedriver in order to fetch images for the query word. 
-    ⁃NLTK is used to fetch synonyms and look-alikes for the query word and these outputs are stored
-    ⁃images for the query word and it's synonyms is stored in images2 and if the synonym list length is below 6, the starting 
-     query word is searched for and downloaded. The amount of "query searches" that is looked for is based off of the 
-     synonym list length times 8 and that total number minus 50. 48 is the allowed pictures that is shown in the default 
-     settings, but 50 allows room for 2 broken url links or unaccessable photos.
-    ⁃Atlas then takes the images and uses requests to convert it to byte form. Then it converts 
-     the bytes form to a readable PIL form and resizes the images
-    ⁃Atlas then splits the list of images and creates a blank canvas, afterwards the items are pasted
-     into rows and arranged symmetrically if compact or in a random array if disarrayed
+Defining the display_images Function:
+    The display_images function is responsible for creating a Tkinter window and displaying the images in a gallery format. It takes the image_folder parameter, which represents the path to the       folder where the images are stored.
+    
+https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L8-L36
 
 
+Defining the fetch_and_display_images Function:
+    The fetch_and_display_images function takes two parameters: query_word, representing the keyword for image search, and max_images, representing the maximum number of images to fetch.
 
+  Inside this function:
+
+    The search_url variable is set to the Google Images search URL with a placeholder for the query word.
+    The code sends an HTTP GET request to the search URL using requests.get(), retrieves the response, and creates a BeautifulSoup object to parse the HTML content.
+    It finds all the img tags within the HTML using soup.find_all('img') and extracts the source URLs for the images.
+    It creates a target folder named "images" using os.makedirs() if it doesn't already exist.
+    The function iterates over the retrieved image URLs and downloads the images using requests.get(url).content. Each image is saved in the "images" folder with a file name in the format             "image_i.jpg", where i represents the index of the image.
+    The downloaded images are then displayed by calling the display_images function, passing the path of the target folder.
+    
+https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L39-L65
+
+
+Prompting the User for Input:
+    The program prompts the user to enter a query word, which is stored in the query_word variable.
+    
+https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L68-L69
+
+
+Setting the Maximum Number of Images:
+    The maximum number of images to fetch is set to 40, stored in the max_images variable.
+
+https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L71C1-L72
+
+
+Fetching and Displaying the Images:
+    The fetch_and_display_images function is called, passing the query word and the maximum number of images as arguments.
+    That's the complete breakdown of the code. It prompts the user for a query word, fetches images from Google Images based on the query, downloads them, and then displays them in a Tkinter-based      image gallery.
+    
+https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L74-L75
