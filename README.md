@@ -17,12 +17,13 @@ Importing the Required Libraries:
 The code begins by importing the necessary libraries:
 
    tkinter is used for creating the GUI and displaying the images.
-    PIL (Python Imaging Library) is used for image processing and displaying images in Tkinter.
+   
+   PIL (Python Imaging Library) is used for image processing and displaying images in Tkinter.
     os provides functionality for interacting with the operating system, such as creating directories and file paths.
     requests is used for sending HTTP requests to fetch the image URLs.
     BeautifulSoup is a library for web scraping and parsing HTML.
     
-  https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L1C1-L5
+https://github.com/Caleb5Mathew/Atlas/blob/0e60b180ca00df5e7a90e17d34ea159391550b9a/Atlas3.py#L1-L5
 
 
 Defining the display_images Function:
